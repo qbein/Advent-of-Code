@@ -1,38 +1,42 @@
 
 def part01():
   """
-  Advent of Code 2021 December 1st, part 1
+  Advent of Code 2021; December 1st, part 1
   """
-  before = -1
-  count = 0
+  previous_depth = -1
+  increase_count = 0
 
   file = open("data_01.txt", "r")
   for line in file:
-    now = int(line)
-    if(before > 0 and now > before):
-      count += 1
-    before = now
+    current_depth = int(line)
+    if(previous_depth > 0 and current_depth > previous_depth):
+      increase_count += 1
+    previous_depth = current_depth
 
-  print("Part 1; count: {0}".format(count))
+  file.close()
+
+  print("Part 1; increase_count: {0}".format(increase_count))
 
 def part02():
   """
-  Advent of Code 2021 December 1st, part 2
+  Advent of Code 2021; December 1st, part 2
   """
-  count = 0
-  list = []
+  increase_count = 0
+  depth_list = []
   file = open("data_01.txt", "r")
   for line in file:
-    now = int(line)
-    list.append(now)
-    if(len(list) < 4):
+    current_depth = int(line)
+    depth_list.append(current_depth)
+    if(len(depth_list) < 4):
       continue
 
-    if(sum(list[1:4]) > sum(list[0:3])):
-      count += 1
-    list.pop(0) 
+    if(sum(depth_list[1:4]) > sum(depth_list[0:3])):
+      increase_count += 1
+    depth_list.pop(0) 
 
-  print("Part 2; count: {0}".format(count))
+  file.close()
+
+  print("Part 2; increase_count: {0}".format(increase_count))
 
 part01()
 part02()
