@@ -1,4 +1,4 @@
-def part0101():
+def part01():
   """
   Advent of Code 2021; December 1st, part 1
   """
@@ -16,7 +16,7 @@ def part0101():
 
   print("December 1, Part 1; result: {0}".format(increase_count))
 
-def part0102():
+def part02():
   """
   Advent of Code 2021; December 1st, part 2
   """
