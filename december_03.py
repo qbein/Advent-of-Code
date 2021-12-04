@@ -1,3 +1,5 @@
+import helpers
+
 def part01():
   """
   Advent of Code 2021; December 3nd, part 1
@@ -5,18 +7,12 @@ def part01():
   gamma = ""
   epsilon = ""
 
-  file = open("data_03.txt", "r")
-  counts = [0] * 12
-  line_count = 0
-  for line in file:
-    line_count += 1
-    for index, character in enumerate(line.strip()):
-      counts[index] += int(character)
+  lines = helpers.read_lines("data_03.txt")
+  counts = count_occurences(lines);
 
-  file.close()
-  
+  threshold = len(lines) / 2
   for count in counts:
-    if count > line_count / 2:
+    if count > threshold:
       gamma += "1"
       epsilon += "0"
     else:
@@ -24,3 +20,46 @@ def part01():
       epsilon += "1"
 
   print("December 3, Part 1; result: {0}".format(int(gamma, 2) * int(epsilon, 2)))
+
+def part02():
+  """
+  Advent of Code 2021; December 3nd, part 1
+  """
+  
+  oxygen = ""
+  co2 = ""
+
+  lines = helpers.read_lines("data_03.txt")
+
+  oxygen = find_rating(lines, True)
+  co2 = find_rating(lines, False)
+  
+  print("December 3, Part 1; result: {0}".format(int(oxygen, 2) * int(co2, 2)))
+
+def filter_by_occurence(item, index, value):
+  return item[index] == value
+
+def count_occurences(lines):
+  counts = []
+  for line in lines:
+    for index, character in enumerate(line):
+      if(len(counts) <= index):
+        counts.append(int(character))
+      else:
+        counts[index] += int(character)
+  return counts
+
+def find_rating(_lines, find_dominant):
+  lines = _lines.copy()
+  for index in range(len(lines[0])):
+    threshold = len(lines) / 2
+    counts = count_occurences(lines)
+    
+    dominant = True if counts[index] >= threshold else False
+    find_bit = dominant if find_dominant else not dominant
+    filter_bit = '1' if find_bit else '0'
+
+    lines = list(filter(lambda line: line[index] == str(filter_bit), lines))
+    
+    if(len(lines) == 1):
+      return lines[0]
