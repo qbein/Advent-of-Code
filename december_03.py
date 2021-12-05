@@ -2,7 +2,7 @@ import helpers
 
 def part01():
   """
-  Advent of Code 2021; December 3nd, part 1
+  Advent of Code 2021; December 3rd, part 1
   """
   gamma = ""
   epsilon = ""
@@ -23,7 +23,7 @@ def part01():
 
 def part02():
   """
-  Advent of Code 2021; December 3nd, part 1
+  Advent of Code 2021; December 3rd, part 1
   """
   
   oxygen = ""
