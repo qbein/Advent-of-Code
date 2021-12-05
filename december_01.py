@@ -14,7 +14,9 @@ def part01():
 
   file.close()
 
-  print("December 1, Part 1; result: {0}".format(increase_count))
+  result = increase_count
+  print("December 1, Part 1; result: {0}".format(result))
+  assert(result == 1316)
 
 def part02():
   """
@@ -35,4 +37,6 @@ def part02():
 
   file.close()
 
-  print("December 1, Part 2; result: {0}".format(increase_count))
+  result = increase_count
+  print("December 1, Part 2; result: {0}".format(result))
+  assert(result == 1344)

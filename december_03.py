@@ -19,7 +19,9 @@ def part01():
       gamma += "0"
       epsilon += "1"
 
-  print("December 3, Part 1; result: {0}".format(int(gamma, 2) * int(epsilon, 2)))
+  result = int(gamma, 2) * int(epsilon, 2)
+  print("December 3, Part 1; result: {0}".format(result))
+  assert(result == 2724524)
 
 def part02():
   """
@@ -34,7 +36,9 @@ def part02():
   oxygen = find_rating(lines, True)
   co2 = find_rating(lines, False)
   
-  print("December 3, Part 1; result: {0}".format(int(oxygen, 2) * int(co2, 2)))
+  result = int(oxygen, 2) * int(co2, 2)
+  print("December 3, Part 1; result: {0}".format(result))
+  assert(result == 2775870)
 
 def filter_by_occurence(item, index, value):
   return item[index] == value

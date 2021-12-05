@@ -16,7 +16,9 @@ def part01():
     if(parts[0] == "up"):
       vertical -= int(parts[1])
 
-  print("December 2, Part 1; result: {0}".format(horizontal * vertical))
+  result = horizontal * vertical
+  print("December 2, Part 1; result: {0}".format(result))
+  assert(result == 1698735)
 
 def part02():
   """
@@ -39,4 +41,6 @@ def part02():
     if(parts[0] == "up"):
       aim -= int(parts[1])
 
-  print("December 2, Part 2; result: {0}".format(horizontal * vertical))
+  result = horizontal * vertical
+  print("December 2, Part 2; result: {0}".format(result))
+  assert(result == 1594785890)

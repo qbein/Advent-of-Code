@@ -15,7 +15,9 @@ def part01():
       continue
     break
 
-  print("December 4, Part 1; result: {0}".format(winner.get_score()))
+  result = winner.get_score()
+  print("December 4, Part 1; result: {0}".format(result))
+  assert(result == 54275)
 
 def part02():
   """
@@ -30,7 +32,9 @@ def part02():
       if(board.add(number)):
         winner = board
 
-  print("December 4, Part 1; result: {0}".format(winner.get_score()))  
+  result = winner.get_score()
+  print("December 4, Part 1; result: {0}".format(result))  
+  assert(result == 13158)
 
 def read_data():
   numbers:list = None
