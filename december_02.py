@@ -5,7 +5,7 @@ def part01():
   horizontal = 0
   vertical = 0
 
-  file = open("data_02.txt", "r")
+  file = open("data/02.txt", "r")
   for line in file:
     # forward 7
     parts = line.split()
@@ -28,7 +28,7 @@ def part02():
   vertical = 0
   aim = 0
 
-  file = open("data_02.txt", "r")
+  file = open("data/02.txt", "r")
   for line in file:
     # forward 7
     parts = line.split()

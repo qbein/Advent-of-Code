@@ -5,7 +5,7 @@ def part01():
   previous_depth = -1
   increase_count = 0
 
-  file = open("data_01.txt", "r")
+  file = open("data/01.txt", "r")
   for line in file:
     current_depth = int(line)
     if(previous_depth > 0 and current_depth > previous_depth):
@@ -24,7 +24,7 @@ def part02():
   """
   increase_count = 0
   depth_list = []
-  file = open("data_01.txt", "r")
+  file = open("data/01.txt", "r")
   for line in file:
     current_depth = int(line)
     depth_list.append(current_depth)

@@ -42,7 +42,7 @@ def read_data():
   
   current_board_numbers:list = None
 
-  file = open("data_04.txt", "r")
+  file = open("data/04.txt", "r")
   for _line in file:
     line = _line.strip()
     

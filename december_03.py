@@ -7,7 +7,7 @@ def part01():
   gamma = ""
   epsilon = ""
 
-  lines = helpers.read_lines("data_03.txt")
+  lines = helpers.read_lines("data/03.txt")
   counts = count_occurences(lines);
 
   threshold = len(lines) / 2
@@ -31,7 +31,7 @@ def part02():
   oxygen = ""
   co2 = ""
 
-  lines = helpers.read_lines("data_03.txt")
+  lines = helpers.read_lines("data/03.txt")
 
   oxygen = find_rating(lines, True)
   co2 = find_rating(lines, False)

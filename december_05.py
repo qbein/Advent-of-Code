@@ -4,17 +4,17 @@ import numpy as np
 def part01():
   result = find_overlapping_lines()
   
-  print("December 5, Part 1; result: {0}".format(result))  
+  print("December 5, Part 1; result: {0}".format(result))
   assert(result == 5835)
 
 def part02():
   result = find_overlapping_lines(True)
-  print("December 5, Part 2; result: {0}".format(result))  
+  print("December 5, Part 2; result: {0}".format(result))
   assert(result == 17013)
   
 def find_overlapping_lines(count_diagonal = False):
   lines = []
-  for line in helpers.yield_lines("data_05.txt"):
+  for line in helpers.yield_lines("data/05.txt"):
     _a, _b = line.split(" -> ")
     a = np.array(_a.split(",")).astype(int)
     b = np.array(_b.split(",")).astype(int)
