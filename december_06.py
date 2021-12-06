@@ -1,35 +1,36 @@
 import helpers
+import numpy as np
 
 def part01():
-  fish = evolve_fish("data/06.txt", 80)
-
-  result = len(fish)
+  result = num_fish_after_days("data/06.txt", 80)
   print("December 6, Part 1; result: {0}".format(result))
-  assert(result == 372984)
+  assert result == 372984
 
 def part02():
-  fish = evolve_fish("data/06_test.txt", 256)
-  
-  result = len(fish)
+  result = num_fish_after_days("data/06.txt", 256)
   print("December 6, Part 2; result: {0}".format(result))
-  assert(result == -1)
+  assert result == 1681503251694
 
-def evolve_fish(filename, days):
-  fish = []
+def num_fish_after_days(filename, days):
+  fish = dict.fromkeys(range(0, 9), 0)
   for line in helpers.yield_lines(filename):
-    fish = [int(x) for x in line.split(",")]
+    unique, counts = np.unique(
+      [int(x) for x in line.split(",")], 
+      return_counts=True
+      )
+
+    for index, item in enumerate(unique):
+      fish[item] = counts[index]
 
   for day in range(0, days):
     advance_day(fish)
-
-  return fish
+  
+  return sum(fish.values())
 
 def advance_day(state):
-  new_fish = []
-  for index, timer in enumerate(state):
-    if(timer == 0):
-      new_fish.append(8)
-      state[index] = 6
-    else:
-      state[index] = timer-1
-  state.extend(new_fish)
+  new_count = state[0]
+  for timer in range(1, 9):
+    state[timer-1] = state[timer]
+  state[8] = new_count
+  state[6] += new_count
+
