@@ -14,13 +14,13 @@ def part02():
 def num_fish_after_days(filename, days):
   fish = dict.fromkeys(range(0, 9), 0)
   for line in helpers.yield_lines(filename):
-    unique, counts = np.unique(
+    timers, counts = np.unique(
       [int(x) for x in line.split(",")], 
       return_counts=True
       )
 
-    for index, item in enumerate(unique):
-      fish[item] = counts[index]
+    for index, timer in enumerate(timers):
+      fish[timer] = counts[index]
 
   for day in range(0, days):
     advance_day(fish)
