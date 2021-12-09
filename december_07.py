@@ -17,6 +17,7 @@ def part02():
   print("December 7, Part 2; result: {0}".format(result))
   assert result == 87640209
 
+# https://stackoverflow.com/a/61720945
 def sum_range(f, t):
     dist = f - t
     return f * (dist+1) + int(dist*(dist+1)/2)
