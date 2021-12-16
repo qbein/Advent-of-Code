@@ -12,7 +12,6 @@ def part01():
     
   print("December 11, Part 1; result: {0}".format(result))
   assert result == 1627
-  print()
 
 def part02():
   grid = []
@@ -28,7 +27,6 @@ def part02():
     
   print("December 11, Part 2; result: {0}".format(result))
   assert result == 329
-  print()
 
 def yield_items(grid):
   for y, line in enumerate(grid):
